@@ -1,0 +1,46 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+scalar Time
+
+type Tiger {
+  ID: ID!
+  Name: String!
+  DateOfBirth: Time!
+  LastSeen: LastSeenInfo!
+  LatestImage: Image!
+}
+
+type LastSeenInfo {
+  Timestamp: Time!
+  Coordinates: Coordinates!
+}
+
+type Coordinates {
+  Latitude: Float!
+  Longitude: Float!
+}
+
+type Image {
+  Filename: String!
+  Data: String!
+}
+
+type User {
+  Email: String!
+}
+
+type TigerPagination {
+  TotalCount: Int!
+  PageInfo: PageInfo!
+  Tigers: [Tiger!]!
+}
+
+type PageInfo {
+  HasNextPage: Boolean!
+  HasPreviousPage: Boolean!
+  StartCursor: String!
+  EndCursor: String!
+}
+
